@@ -111,7 +111,7 @@ constexpr int GAP_16 = 4;
 constexpr int GAP_16_INDICIES_OFFSET = 32;
 
 size_t fdcan_dlc_to_len(uint32_t dlc) {
-    #ifdef ARDUINO
+    #if defined(ARDUINO) || defined(STM32G4)
     auto dlc_index = (uint8_t)(dlc / MAX_16BIT);
     #else
     auto dlc_index = dlc;
