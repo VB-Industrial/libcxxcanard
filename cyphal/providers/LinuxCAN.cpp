@@ -77,7 +77,7 @@ void LinuxCAN::can_loop(bool no_tx) {
     CanardFrame frame;
     struct canfd_frame raw_frame {};
 
-    int status = poll(&can_pollfd, 1, 50);
+    int status = poll(&can_pollfd, 1, 1);
     if (status == -1) {
         utilities.error_handler();
     }
