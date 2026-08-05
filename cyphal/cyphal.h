@@ -42,9 +42,9 @@ private:
 #ifdef __linux__
     std::thread rx_thread;
     std::thread tx_thread;
-    std::atomic<bool> threads_terminate_flag;
-    std::atomic<bool> is_rx_terminated;
-    std::atomic<bool> is_tx_terminated;
+    std::atomic<bool> threads_terminate_flag{true};
+    std::atomic<bool> is_rx_terminated{true};
+    std::atomic<bool> is_tx_terminated{true};
 #endif
 
 public:
